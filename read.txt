@@ -1,0 +1,27 @@
+Books data info
+
+I'm interested in combining several different datasets scraped from Goodreads to create a more comprensive look at books that are both well loved and books that readers have shown interest in. Using ratings, to-read tags, and engagement in reviewing (number of ratings and number of written reviews), I'd like to make an informative data analysis for publishers or writers hoping to create the next big sensation. I'd love to use sales data, but that is mostly behind a paywall, so I'm using this info instead as a marker of interest in place of sales data. Then for analysis. I'd like to break out which genres, series vs one-offs, page numbers, etc are a particularly compelling market. I'd love to have word count instead of page count for a more accurate representation of length, but didn't find a dataset with that info, so this will stand in for that.
+
+
+Dataset 1:
+GoodReads_100k_books.csv with good genre, page numbers info:
+https://www.kaggle.com/datasets/mdhamani/goodreads-books-100k
+
+Dataset 2:
+Goodreads 10k books.csv with more comprehensive ratings data, publisher info:
+https://github.com/zygmuntz/goodbooks-10k
+
+Dataset 3:
+Possible addition of to-read tags information:
+In same 10k set is a to_read.csv that shows user_id and book_id that has been marked to read
+- Might need some manipulation to combine counts by book_id and then add to books.csv for another factor to consider
+- Not sure if it's worth keeping user id - maybe merge titles and genres over into this set to see how trends emerge across user? Would looking at "super-user" data help indicate potential links between books? (This might be out of scope)
+- Probably need to combine this with the 10k dataset before merging
+- Can merge to_read.csv on book_id with books.csv on work_id
+
+
+
+Do an inside merge on isbn to create a dataset with both pieces:
+ - probably want to then merge duplicates across versions using author/title data to avoid skewing data with multiple editions/formats
+
+
